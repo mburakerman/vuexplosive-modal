@@ -14,8 +14,8 @@
       <br>
       <pre><code class="language-js">&lt;VuexplosiveModal :visible="showModal">&lt;/VuexplosiveModal> </code></pre>
       <pre><code class="language-js">&lt;button @click="toggleModal">Open Modal&lt;/button></code></pre>
-      <a href="#" target="_blank">CodePen Demo</a>
-      <h2>⏬ Installation</h2>
+      <!--<a href="#" target="_blank">CodePen Demo</a>-->
+      <h2>⏬ Install</h2>
       <pre><code class="language-js">npm i vuexplosive-modal --save</code></pre>
       <h2>⚙️Props</h2>
       <pre><code class="language-js"> visible: {
