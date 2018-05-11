@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      show: false
+      showModal: false
     };
   },
   methods: {
