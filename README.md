@@ -51,6 +51,9 @@ props: {
     },
     content: {
       default: `<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻</p>`
+    },
+    footer: {
+      default: `<button>I do nothing!</button>`
     }
   },
 ```
