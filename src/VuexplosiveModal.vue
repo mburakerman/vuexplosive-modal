@@ -1,28 +1,35 @@
 <template>
-  <div class="vuexplosive-modal" :class="{'vuexplosive-modal-hidden': !active, 'vuexplosive-modal-visible': active}" @keydown.esc="modalToggle" :aria-hidden="!active" tabindex="-1" role="dialog">
+  <div
+    class="vuexplosive-modal"
+    :class="{'vuexplosive-modal-hidden': !active, 'vuexplosive-modal-visible': active}"
+    @keydown.esc="modalToggle"
+    :aria-hidden="!active"
+    tabindex="-1"
+    role="dialog"
+  >
     <transition name="scale">
-
       <div class="vuexplosive-modal-container" v-if="active">
         <div class="vuexplosive-modal-inner">
           <div class="vuexplosive-modal-header">
             <h2 class="vuexplosive-modal-title">{{title}}</h2>
-            <button class="vuexplosive-modal-close" @click="modalToggle" v-html="closeIcon" arial-label="close"></button>
+            <button
+              class="vuexplosive-modal-close"
+              @click="modalToggle"
+              v-html="closeIcon"
+              arial-label="close"
+            ></button>
           </div>
 
           <div class="vuexplosive-modal-content" v-html="content"></div>
 
-          <div class="vuexplosive-modal-footer">
-            <button class="vuexplosive-modal-okay" @click="modalToggle">Okay 🗸</button>
-          </div>
+          <div class="vuexplosive-modal-footer" v-html="footer"></div>
         </div>
       </div>
-      
     </transition>
 
     <div class="vuexplosive-modal-bg" @click="modalToggle">
-      <img class="vuexplosive-modal-explosion-gif" :src="active ? explosionGifUrl : '' " />
+      <img class="vuexplosive-modal-explosion-gif" :src="active ? explosionGifUrl : '' ">
     </div>
-    
   </div>
 </template>
 
@@ -43,12 +50,16 @@ export default {
     },
     content: {
       default: `<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻</p>`
+    },
+    footer: {
+      default: `<button>I do nothing!</button>`
     }
   },
   data: function() {
     return {
       active: false,
-      explosionGifUrl: "https://cdn.pbrd.co/images/mYwKJYJI.gif"
+      explosionGifUrl:
+        "https://raw.githubusercontent.com/mburakerman/vuexplosive-modal/development/src/fire.gif"
     };
   },
 
@@ -92,7 +103,6 @@ export default {
 .vuexplosive-modal-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -101,6 +111,7 @@ export default {
 }
 
 .vuexplosive-modal-close {
+  align-self: flex-start;
   font-size: 20px;
   color: rgba(217, 83, 79, 0.8);
   background: none;
@@ -111,21 +122,6 @@ export default {
 .vuexplosive-modal-content {
   font-size: 17px;
   color: #666;
-}
-
-.vuexplosive-modal-okay {
-  color: #fff;
-  background: rgba(79, 144, 193, 0.85);
-  border: none;
-  border-radius: 5px;
-  font-size: 17px;
-  padding: 6px 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.vuexplosive-modal-okay:hover {
-  background: #4f90c1;
 }
 
 .vuexplosive-modal-bg {
