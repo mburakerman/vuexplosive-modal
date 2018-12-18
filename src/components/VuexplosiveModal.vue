@@ -58,7 +58,8 @@ export default {
   data: function() {
     return {
       active: false,
-      explosionGifUrl: "fire.gif"
+      explosionGifUrl:
+        "https://raw.githubusercontent.com/mburakerman/vuexplosive-modal/development/src/fire.gif"
     };
   },
 
