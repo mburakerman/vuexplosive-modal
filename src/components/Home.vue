@@ -4,7 +4,6 @@
       <h1>🔥 Vuexplosive Modal 🔥</h1>
       <p>A simple Vue modal component with an explosion effect</p>
     </header>
-    
 
     <main>
       <h2>🕹️ Demo</h2>
@@ -29,16 +28,31 @@
     },
     content: {
       default: `&lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻&lt;/p>`
+    },
+    footer: {
+      default: `&lt;button>I do nothing!&lt;/button>`
     }
     </code></pre>
       <h2>🐙 More</h2>
-      <p>You can also customize the markup as you wish. Go <a href="https://github.com/mburakerman/vuexplosive-modal/" target="_blank">Github page</a> to see more details.</p>
+      <p>
+        You can also customize the markup as you wish. Go
+        <a
+          href="https://github.com/mburakerman/vuexplosive-modal/"
+          target="_blank"
+        >Github page</a> to see more details.
+      </p>
       <VuexplosiveModal :visible="show"></VuexplosiveModal>
     </main>
 
-
     <footer>
-      <p>&copy; <a href="https://mburakerman.github.io/" target="_blank" rel="external">Mehmet Burak Erman</a></p>
+      <p>
+        &copy;
+        <a
+          href="https://mburakerman.github.io/"
+          target="_blank"
+          rel="external"
+        >Mehmet Burak Erman</a>
+      </p>
     </footer>
   </div>
 </template>
