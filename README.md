@@ -16,7 +16,7 @@ npm install vuexplosive-modal --save
 ```
 
 ```js
-import VuexplosiveModal from "./VuexplosiveModal"
+import VuexplosiveModal from "vuexplosive-modal"
 
 export default {
   components: {
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     toggleModal() {
-      this.show = !this.show;
+      this.showModal = !this.showModal;
     }
   }
 };
