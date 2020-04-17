@@ -10,9 +10,9 @@
       <button @click="toggleModal" class="open-modal-btn">Open Modal</button>
       <h2>📝 Usage</h2>
       <pre><code class="language-js">import VuexplosiveModal from "./VuexplosiveModal";</code></pre>
-      <br>
+      <br />
       <pre><code class="language-js">&lt;VuexplosiveModal :visible="showModal">&lt;/VuexplosiveModal> </code></pre>
-      <pre><code class="language-js">&lt;button @click="toggleModal">Open Modal&lt;/button></code></pre>
+      <pre><code class="language-js">&lt;button @click="showModal = !showModal">Open Modal&lt;/button></code></pre>
       <!--<a href="#" target="_blank">CodePen Demo</a>-->
       <h2>⏬ Install</h2>
       <pre><code class="language-js">npm i vuexplosive-modal --save</code></pre>
@@ -21,10 +21,10 @@
       default: false
     },
     title: {
-      default: "Boo! 🔥"
+      default: "🔥 Boo!"
     },
     closeIcon: {
-      default: `&lt;span>❌&lt;/span>`
+      default: `&lt;span>&#x274C;&lt;/span>`
     },
     content: {
       default: `&lt;p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻&lt;/p>`
@@ -94,6 +94,15 @@ header {
 header h1 {
   font-size: 40px;
   margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  header p {
+    font-size: 16px;
+  }
 }
 
 header p {
