@@ -12,7 +12,7 @@ npm install vuexplosive-modal --save
 
 ```html
 <VuexplosiveModal :visible="showModal"></VuexplosiveModal> 
-<button @click="toggleModal">Open Modal</button>
+<button @click="showModal = !showModal">Open Modal</button>
 ```
 
 ```js
@@ -26,11 +26,6 @@ export default {
     return {
       showModal: false
     };
-  },
-  methods: {
-    toggleModal() {
-      this.showModal = !this.showModal;
-    }
   }
 };
 ```
@@ -44,10 +39,10 @@ props: {
       default: false
     },
     title: {
-      default: "Boo! 🔥"
+      default: "🔥 Boo!"
     },
     closeIcon: {
-      default: `<span>❌</span>`
+      default: `<span>&#x274C;</span>`
     },
     content: {
       default: `<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻</p>`
@@ -57,3 +52,6 @@ props: {
     }
   },
 ```
+
+## License
+Licensed under the MIT License
