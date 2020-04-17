@@ -2,8 +2,8 @@
   <div
     class="vuexplosive-modal"
     :class="{'vuexplosive-modal-hidden': !active, 'vuexplosive-modal-visible': active}"
-    @keydown.esc="modalToggle"
-    :aria-hidden="!active"
+    @keydown.esc=" active = false"
+    :aria-hidden="modalToggle"
     tabindex="-1"
     role="dialog"
   >
@@ -11,7 +11,7 @@
       <div class="vuexplosive-modal-container" v-if="active">
         <div class="vuexplosive-modal-inner">
           <div class="vuexplosive-modal-header">
-            <h2 class="vuexplosive-modal-title">{{title}}</h2>
+            <div class="vuexplosive-modal-title">{{title}}</div>
             <button
               class="vuexplosive-modal-close"
               @click="modalToggle"
@@ -28,7 +28,7 @@
     </transition>
 
     <div class="vuexplosive-modal-bg" @click="modalToggle">
-      <img class="vuexplosive-modal-explosion-gif" :src="active ? explosionGifUrl : '' ">
+      <img class="vuexplosive-modal-explosion-gif" :src="active ? explosionGifUrlBlob : '' " />
     </div>
   </div>
 </template>
@@ -37,16 +37,16 @@
 <script>
 /* eslint-disable */
 export default {
-  name: "VuexplosionModal",
+  name: "VuexplosiveModal",
   props: {
     visible: {
       default: false
     },
     title: {
-      default: "Boo! 🔥"
+      default: "🔥 Boo!"
     },
     closeIcon: {
-      default: `<span>❌</span>`
+      default: `<span>&#x274C;</span>`
     },
     content: {
       default: `<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet a tenetur delectus reprehenderit, omnis doloremque at earum officia unde sequi accusantium corporis praesentium deserunt laboriosam dignissimos voluptatum culpa molestiae ullam. 👻</p>`
@@ -59,8 +59,16 @@ export default {
     return {
       active: false,
       explosionGifUrl:
-        "https://raw.githubusercontent.com/mburakerman/vuexplosive-modal/development/src/fire.gif"
+        "https://raw.githubusercontent.com/mburakerman/vuexplosive-modal/development/src/fire.gif",
+      explosionGifUrlBlob: ""
     };
+  },
+  created() {
+    fetch(this.explosionGifUrl)
+      .then(response => response.blob())
+      .then(images => {
+        this.explosionGifUrlBlob = URL.createObjectURL(images);
+      });
   },
 
   methods: {
@@ -82,6 +90,7 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
     "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial,
     sans-serif;
+  line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
   text-align: left;
 }
@@ -108,20 +117,21 @@ export default {
 
 .vuexplosive-modal-title {
   font-size: 30px;
+  font-weight: bolder;
 }
 
 .vuexplosive-modal-close {
   align-self: flex-start;
-  font-size: 20px;
-  color: rgba(217, 83, 79, 0.8);
+  font-size: 18px;
   background: none;
   border: none;
+  padding: 0;
   cursor: pointer;
 }
 
 .vuexplosive-modal-content {
-  font-size: 17px;
-  color: #666;
+  font-size: 18px;
+  color: #333;
 }
 
 .vuexplosive-modal-bg {
