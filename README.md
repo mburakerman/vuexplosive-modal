@@ -52,3 +52,5 @@ props: {
     }
   },
 ```
+
+## License
