@@ -1,0 +1,24 @@
+{
+  "name": "vuexplosive-modal",
+  "description": "A simple Vue modal component with an explosion effect",
+  "version": "1.2.0",
+  "main": "src/VuexplosiveModal.vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mburakerman/vuexplosive-modal.git"
+  },
+  "author": {
+    "name": "Mehmet Burak Erman"
+  },
+  "homepage": "https://mburakerman.github.io/vuexplosive-modal/",
+  "keywords": [
+    "modal",
+    "popup",
+    "vue",
+    "explosion"
+  ],
+  "bugs": {
+    "url": "https://github.com/mburakerman/vuexplosive-modal/issues"
+  },
+  "license": "MIT"
+}
