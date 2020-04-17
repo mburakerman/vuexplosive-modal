@@ -4,8 +4,6 @@
 
 ## Install
 
-<a href="https://nodei.co/npm/vuexplosive-modal/"><img src="https://nodei.co/npm/vuexplosive-modal.png?mini=true"></a>
-
 ```js
 npm install vuexplosive-modal --save
 ```
